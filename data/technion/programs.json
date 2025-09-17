@@ -1,0 +1,31 @@
+[
+  {
+    "id": "TECH-CS",
+    "name": "Computer Science",
+    "faculty": "Computer Science",
+    "rules": [
+      {"type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80},
+      {"type": "subject_requirement", "subject": "Physics", "min_units": 5, "min_score": 70},
+      {"type": "sakem_threshold", "threshold": 85.0}
+    ]
+  },
+  {
+    "id": "TECH-EE",
+    "name": "Electrical Engineering",
+    "faculty": "Engineering",
+    "rules": [
+      {"type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80},
+      {"type": "subject_requirement", "subject": "Physics", "min_units": 5, "min_score": 75},
+      {"type": "sakem_threshold", "threshold": 83.0}
+    ]
+  },
+  {
+    "id": "TECH-IE",
+    "name": "Industrial Engineering & Management",
+    "faculty": "Engineering",
+    "rules": [
+      {"type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80},
+      {"type": "sakem_threshold", "threshold": 80.0}
+    ]
+  }
+]

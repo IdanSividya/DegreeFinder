@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>מערכת חישוב סכם – טכניון</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+    .card { border: 1px solid #ddd; padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+    .row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+    label { min-width: 160px; }
+    input[type="number"] { width: 100px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+    .chip { padding: 6px 10px; border: 1px solid #888; border-radius: 12px; cursor: pointer; }
+    .chip.selected { background: #f0f0f0; }
+    .muted { color: #666; font-size: 0.9em; }
+    .results-pass { color: #0a7a0a; font-weight: 700; }
+    .results-fail { color: #b30000; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .small { font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>חישוב סכם – טכניון</h1>
+
+  <div class="card">
+    <div class="row">
+      <label>מוסד:</label>
+      <select id="institution">
+        <option value="technion">טכניון</option>
+      </select>
+    </div>
+    <div class="row">
+      <label>ציון פסיכומטרי:</label>
+      <input type="number" id="psy" min="200" max="800" step="1" value="700">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>מקצועות חובה</h3>
+    <div id="mandatory"></div>
+  </div>
+
+  <div class="card">
+    <h3>מקצועות בחירה</h3>
+    <div id="elective-chips" class="chips"></div>
+    <div id="electives"></div>
+    <div class="muted small">בחר/י מקצועות מהרשימה למעלה והזינו יח"ל + ציון.</div>
+  </div>
+
+  <button id="compute">חשב</button>
+
+  <div id="results" style="margin-top:24px;"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

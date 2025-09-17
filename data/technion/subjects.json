@@ -1,0 +1,24 @@
+{
+  "mandatory": [
+    {"name": "English", "allowed_units": [3, 4, 5]},
+    {"name": "Mathematics", "allowed_units": [3, 4, 5]},
+    {"name": "Hebrew Language (Expression)", "allowed_units": [2, 3, 4, 5]},
+    {"name": "Literature", "allowed_units": [2, 3, 4, 5]},
+    {"name": "Bible", "allowed_units": [2, 3, 4, 5]},
+    {"name": "Civics", "allowed_units": [2, 3, 4, 5]},
+    {"name": "History", "allowed_units": [2, 3, 4, 5]}
+  ],
+  "electives": [
+    {"name": "Physics", "allowed_units": [5]},
+    {"name": "Chemistry", "allowed_units": [5]},
+    {"name": "Biology", "allowed_units": [5]},
+    {"name": "Computer Science", "allowed_units": [5]},
+    {"name": "Electronics & Computers", "allowed_units": [5]},
+    {"name": "Engineering Sciences", "allowed_units": [5]},
+    {"name": "Biotechnology", "allowed_units": [5]},
+    {"name": "Biotechnology Systems", "allowed_units": [5]},
+    {"name": "Biotech Applications", "allowed_units": [5]},
+    {"name": "Economics/Management", "allowed_units": [5]},
+    {"name": "Other Subject (not listed)", "allowed_units": [1, 2, 3, 4, 5]}
+  ]
+}

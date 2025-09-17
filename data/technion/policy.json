@@ -1,0 +1,23 @@
+{
+  "min_total_units": 20,
+  "max_D": 119,
+  "allow_drop_jewish_philosophy_if": {"subject": "Literature", "min_units": 2},
+  "bonus_base": {"4u": 10, "5u": 20, "min_score": 60},
+  "bonus_extra": {
+    "math_5u": 30,
+    "scientific_5u": 25,
+    "technological_5u": 25,
+    "aggregate_bump": 30,
+    "scientific_set": ["Physics", "Chemistry", "Biology"],
+    "technological_set": [
+      "Computer Science",
+      "Electronics & Computers",
+      "Engineering Sciences",
+      "Biotechnology",
+      "Biotechnology Systems",
+      "Biotech Applications"
+    ]
+  },
+  "double_weight_subjects": ["Mathematics"],
+  "sakem_formula": {"type": "technion", "a": 0.5, "b": 0.075, "c": -19.0}
+}
