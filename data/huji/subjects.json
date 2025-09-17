@@ -1,0 +1,50 @@
+{
+  "mandatory": [
+    { "name": "English", "display_name": "אנגלית", "allowed_units": [3, 4, 5] },
+    { "name": "Mathematics", "display_name": "מתמטיקה", "allowed_units": [3, 4, 5] },
+    { "name": "Hebrew Language (Expression)", "display_name": "לשון", "allowed_units": [2, 3, 4, 5] },
+    { "name": "Literature", "display_name": "ספרות", "allowed_units": [2, 3, 4, 5] },
+    { "name": "Bible", "display_name": "תנ\"ך", "allowed_units": [2, 3, 4, 5] },
+    { "name": "Civics", "display_name": "אזרחות", "allowed_units": [2, 3, 4, 5] },
+    { "name": "History", "display_name": "היסטוריה", "allowed_units": [2, 3, 4, 5] }
+  ],
+  "electives": [
+    { "name": "Physics", "display_name": "פיזיקה", "allowed_units": [5] },
+    { "name": "Chemistry", "display_name": "כימיה", "allowed_units": [5] },
+    { "name": "Biology", "display_name": "ביולוגיה", "allowed_units": [5] },
+    { "name": "Computer Science", "display_name": "מדעי המחשב", "allowed_units": [5] },
+    { "name": "Electronics & Computers", "display_name": "אלקטרוניקה ומחשבים", "allowed_units": [5] },
+    { "name": "Engineering Sciences", "display_name": "מדעי ההנדסה", "allowed_units": [5] },
+    { "name": "Biotechnology", "display_name": "ביוטכנולוגיה", "allowed_units": [5] },
+    { "name": "Biotechnology Systems", "display_name": "מערכות ביוטכנולוגיה", "allowed_units": [5] },
+    { "name": "Biotech Applications", "display_name": "יישומי ביוטכנולוגיה", "allowed_units": [5] },
+    { "name": "Economics/Management", "display_name": "כלכלה/ניהול", "allowed_units": [5] },
+
+    { "name": "Environmental Sciences", "display_name": "מדעי הסביבה", "allowed_units": [5] },
+    { "name": "Geography", "display_name": "גיאוגרפיה", "allowed_units": [5] },
+    { "name": "Sociology", "display_name": "סוציולוגיה", "allowed_units": [5] },
+    { "name": "Psychology", "display_name": "פסיכולוגיה", "allowed_units": [5] },
+    { "name": "Communication", "display_name": "תקשורת", "allowed_units": [5] },
+    { "name": "Cinema", "display_name": "קולנוע", "allowed_units": [5] },
+    { "name": "Theatre", "display_name": "תיאטרון", "allowed_units": [5] },
+    { "name": "Music", "display_name": "מוזיקה", "allowed_units": [5] },
+    { "name": "Art", "display_name": "אמנות", "allowed_units": [5] },
+    { "name": "Design", "display_name": "עיצוב", "allowed_units": [5] },
+    { "name": "Agricultural Science", "display_name": "חקלאות", "allowed_units": [5] },
+    { "name": "Physical Education (Extended)", "display_name": "חינוך גופני (5 יח\"ל)", "allowed_units": [5] },
+
+    { "name": "Arabic", "display_name": "ערבית", "allowed_units": [5] },
+    { "name": "French", "display_name": "צרפתית", "allowed_units": [5] },
+    { "name": "Spanish", "display_name": "ספרדית", "allowed_units": [5] },
+    { "name": "Russian", "display_name": "רוסית", "allowed_units": [5] },
+    { "name": "German", "display_name": "גרמנית", "allowed_units": [5] },
+    { "name": "Italian", "display_name": "איטלקית", "allowed_units": [5] },
+
+    { "name": "History of Art", "display_name": "תולדות האמנות", "allowed_units": [5] },
+    { "name": "Media Studies", "display_name": "לימודי מדיה", "allowed_units": [5] },
+    { "name": "Business & Entrepreneurship", "display_name": "עסקים ויזמות", "allowed_units": [5] },
+    { "name": "Law & Society", "display_name": "משפט וחברה", "allowed_units": [5] },
+
+    { "name": "Other Subject (not listed)", "display_name": "מקצוע אחר (לא ברשימה)", "allowed_units": [1, 2, 3, 4, 5] }
+  ]
+}

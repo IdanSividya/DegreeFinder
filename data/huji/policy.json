@@ -1,0 +1,53 @@
+{
+  "min_total_units": 20,
+
+  "mandatory_always": [
+    "English",
+    "Mathematics",
+    "History",
+    "Civics"
+  ],
+  "language_mandatory_candidates": [
+    "Hebrew Language (Expression)",
+    "Arabic Language and Literature"
+  ],
+
+  "bonus_groups": {
+    "core_25": [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Computer Science",
+      "Arabic",
+      "Arabic Language and Literature",
+      "History",
+      "Civics",
+      "Literature",
+      "Bible",
+      "Jewish Philosophy"
+    ],
+    "other_20": [
+      "Economics/Management",
+      "Geography",
+      "Sociology",
+      "Psychology",
+      "Communication",
+      "Cinema",
+      "Theatre",
+      "Music",
+      "Art",
+      "Design",
+      "Agricultural Science",
+      "Physical Education (Extended)",
+      "Environmental Sciences",
+      "Media Studies",
+      "Business & Entrepreneurship",
+      "Law & Society",
+      "Other Subject (not listed)"
+    ]
+  },
+
+  "psychometric_std": { "a": 0.032073, "b": 0.3672 },
+  "bagrut_std":      { "a": 3.963,    "b": 20.0621 },
+  "sechem":          { "alpha": 1.2422, "beta": 4.7609 }
+}

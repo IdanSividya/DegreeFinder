@@ -1,162 +1,47 @@
 [
-  { "id": "TECH-LAND-ARCH", "name": "אדריכלות נוף", "faculty": "Architecture and Town Planning", "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
-  { "id": "TECH-ARCH", "name": "ארכיטקטורה", "faculty": "Architecture and Town Planning", "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
+  { "id": "TECH-ARCH-LAND",  "name": "אדריכלות נוף",                   "faculty": "הפקולטה לארכיטקטורה ובינוי ערים",                "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
+  { "id": "TECH-ARCH",       "name": "ארכיטקטורה",                     "faculty": "הפקולטה לארכיטקטורה ובינוי ערים",                "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
 
-  { "id": "TECH-BIO", "name": "ביולוגיה", "faculty": "Biology", "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
-  { "id": "TECH-BIO-CHEM-DUAL", "name": "ביולוגיה וכימיה (דו-חוגי)", "faculty": "Biology/Chemistry", "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
+  { "id": "TECH-BIOLOGY",    "name": "ביולוגיה",                        "faculty": "הפקולטה לביולוגיה",                              "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
+  { "id": "TECH-BIO-CHEM",   "name": "ביולוגיה וכימיה (דו-חוגי)",       "faculty": "הפקולטה לביולוגיה",                              "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
 
-  { "id": "TECH-CE", "name": "הנדסה אזרחית", "faculty": "Civil and Environmental Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 87 }
-  ]},
+  { "id": "TECH-CE",         "name": "הנדסה אזרחית",                    "faculty": "הפקולטה להנדסה אזרחית וסביבתית",                  "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
+  { "id": "TECH-ENV1",       "name": "הנדסת הסביבה",                    "faculty": "הפקולטה להנדסה אזרחית וסביבתית",                  "rules": [ { "type": "sakem_threshold", "threshold": 82 } ] },
+  { "id": "TECH-BME",        "name": "הנדסה ביו-רפואית",                "faculty": "הפקולטה להנדסה ביו-רפואית",                      "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
+  { "id": "TECH-BME-PHYS",   "name": "הנדסה ביו-רפואית ופיזיקה",        "faculty": "הפקולטה להנדסה ביו-רפואית",                      "rules": [ { "type": "sakem_threshold", "threshold": 88 } ] },
+  { "id": "TECH-BIOCHEM-ENG","name": "הנדסה ביוכימית",                 "faculty": "הפקולטה להנדסה כימית",                            "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
+  { "id": "TECH-BIOTECH",    "name": "הנדסה ביו-טכנולוגית ומזון",       "faculty": "הפקולטה להנדסה ביו-טכנולוגית ומזון",              "rules": [ { "type": "sakem_threshold", "threshold": 84 } ] },
+  { "id": "TECH-AERO",       "name": "הנדסת אווירונוטיקה וחלל",         "faculty": "הפקולטה להנדסה אווירונוטית וחלל",                "rules": [ { "type": "sakem_threshold", "threshold": 90 } ] },
+  { "id": "TECH-AERO-PHYS",  "name": "הנדסת אווירונוטיקה וחלל ופיזיקה","faculty": "הפקולטה להנדסה אווירונוטית וחלל",                "rules": [ { "type": "sakem_threshold", "threshold": 90 } ] },
 
-  { "id": "TECH-BIOCHEM-ENG", "name": "הנדסה ביוכימית", "faculty": "Chemical Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 85 }
-  ]},
-  { "id": "TECH-BIOTECH-FOOD", "name": "הנדסה ביו-טכנולוגיה ומזון", "faculty": "Biotechnology and Food Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 84 }
-  ]},
-  { "id": "TECH-BME", "name": "הנדסה בין-רפואית", "faculty": "Biomedical Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 87 }
-  ]},
-  { "id": "TECH-BME-PHY", "name": "הנדסה בין-רפואית ופיזיקה", "faculty": "Biomedical Engineering/Physics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 88 }
-  ]},
+  { "id": "TECH-MATERIALS",  "name": "הנדסת חומרים",                    "faculty": "הפקולטה למדע והנדסה של חומרים",                   "rules": [ { "type": "sakem_threshold", "threshold": 86 } ] },
+  { "id": "TECH-MAT-BIO",    "name": "הנדסת חומרים וביולוגיה",          "faculty": "הפקולטה למדע והנדסה של חומרים",                   "rules": [ { "type": "sakem_threshold", "threshold": 86 } ] },
+  { "id": "TECH-MAT-CHEM",   "name": "הנדסת חומרים וכימיה",             "faculty": "הפקולטה למדע והנדסה של חומרים",                   "rules": [ { "type": "sakem_threshold", "threshold": 86 } ] },
+  { "id": "TECH-MAT-PHYS",   "name": "הנדסת חומרים ופיזיקה",            "faculty": "הפקולטה למדע והנדסה של חומרים",                   "rules": [ { "type": "sakem_threshold", "threshold": 86 } ] },
 
-  { "id": "TECH-AERO", "name": "הנדסת אווירונוטיקה וחלל", "faculty": "Aerospace Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 90 }
-  ]},
-  { "id": "TECH-AERO-PHY", "name": "הנדסת אווירונוטיקה וחלל ופיזיקה", "faculty": "Aerospace/Physics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 90 }
-  ]},
+  { "id": "TECH-EE",         "name": "הנדסת חשמל",                      "faculty": "הפקולטה להנדסת חשמל ומחשבים ע״ש ויטרבי",          "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-EE-PHYS",    "name": "הנדסת חשמל ופיזיקה",              "faculty": "הפקולטה להנדסת חשמל ומחשבים ע״ש ויטרבי",          "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-EE-MATH",    "name": "הנדסת חשמל-מתמטיקה",              "faculty": "הפקולטה להנדסת חשמל ומחשבים ע״ש ויטרבי",          "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-CS-ENG",     "name": "הנדסת מחשבים",                    "faculty": "הפקולטה להנדסת חשמל ומחשבים ע״ש ויטרבי",          "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
 
-  { "id": "TECH-ENV", "name": "הנדסת הסביבה", "faculty": "Civil and Environmental Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 82 }
-  ]},
+  { "id": "TECH-CHEM-ENG",   "name": "הנדסה כימית",                     "faculty": "הפקולטה להנדסה כימית",                            "rules": [ { "type": "sakem_threshold", "threshold": 84 } ] },
+  { "id": "TECH-GEOINFO",    "name": "הנדסת מיפוי וגיאו-אינפורמציה",    "faculty": "הפקולטה להנדסה אזרחית וסביבתית",                  "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
+  { "id": "TECH-MECH",       "name": "הנדסת מכונות",                    "faculty": "הפקולטה להנדסת מכונות",                           "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
+  { "id": "TECH-IS",         "name": "הנדסת מערכות מידע",               "faculty": "הפקולטה להנדסת תעשייה וניהול",                    "rules": [ { "type": "sakem_threshold", "threshold": 89 } ] },
+  { "id": "TECH-DS",         "name": "הנדסת נתונים ומידע",              "faculty": "הפקולטה למדעי המחשב ע״ש טאוב",                    "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-SE",         "name": "הנדסת תוכנה",                     "faculty": "הפקולטה למדעי המחשב ע״ש טאוב",                    "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-IE",         "name": "הנדסת תעשייה וניהול",             "faculty": "הפקולטה להנדסת תעשייה וניהול",                    "rules": [ { "type": "sakem_threshold", "threshold": 89 } ] },
 
-  { "id": "TECH-MAT", "name": "הנדסת חומרים", "faculty": "Materials Science and Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 86 }
-  ]},
-  { "id": "TECH-MAT-BIO", "name": "הנדסת חומרים וביולוגיה", "faculty": "Materials/Biology", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 86 }
-  ]},
-  { "id": "TECH-MAT-CHEM", "name": "הנדסת חומרים וכימיה", "faculty": "Materials/Chemistry", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 86 }
-  ]},
-  { "id": "TECH-MAT-PHY", "name": "הנדסת חומרים ופיזיקה", "faculty": "Materials/Physics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 86 }
-  ]},
+  { "id": "TECH-EDU",        "name": "חינוך למדע וטכנולוגיה (תואר ראשון)", "faculty": "הפקולטה לחינוך למדע ולטכנולוגיה",          "rules": [ { "type": "sakem_threshold", "threshold": 84 } ] },
+  { "id": "TECH-EDU-CS",     "name": "חינוך למדע וטכנולוגיה-מדעי המחשב (תואר ראשון)", "faculty": "הפקולטה לחינוך למדע ולטכנולוגיה", "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
 
-  { "id": "TECH-EE", "name": "הנדסת חשמל", "faculty": "Electrical and Computer Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-  { "id": "TECH-EE-PHY", "name": "הנדסת חשמל ופיזיקה", "faculty": "Electrical Engineering/Physics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-  { "id": "TECH-EE-MATH", "name": "הנדסת חשמל-מתמטיקה", "faculty": "Electrical Engineering/Mathematics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-
-  { "id": "TECH-CHE", "name": "הנדסה כימית", "faculty": "Chemical Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 84 }
-  ]},
-
-  { "id": "TECH-COMP-ENG", "name": "הנדסת מחשבים", "faculty": "Electrical and Computer Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-
-  { "id": "TECH-GEOINFO", "name": "הנדסת מיפוי וגיאו-אינפורמציה", "faculty": "Civil and Environmental Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 83 }
-  ]},
-
-  { "id": "TECH-MECH", "name": "הנדסת מכונות", "faculty": "Mechanical Engineering", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 87 }
-  ]},
-
-  { "id": "TECH-ISE", "name": "הנדסת מערכות מידע", "faculty": "Industrial Engineering and Management", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 89 }
-  ]},
-  { "id": "TECH-DATA-ENG", "name": "הנדסת נתונים ומידע", "faculty": "Computer Science", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-  { "id": "TECH-SE", "name": "הנדסת תוכנה", "faculty": "Computer Science", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-
-  { "id": "TECH-IEM", "name": "הנדסת תעשייה וניהול", "faculty": "Industrial Engineering and Management", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 89 }
-  ]},
-
-  { "id": "TECH-EDU-STE", "name": "חינוך למדע וטכנולוגיה (תואר ראשון)", "faculty": "Education in Science and Technology", "rules": [ { "type": "sakem_threshold", "threshold": 84 } ] },
-  { "id": "TECH-EDU-STE-CS", "name": "חינוך למדע וטכנולוגיה – מדעי המחשב (תואר ראשון)", "faculty": "Education in Science and Technology", "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
-
-  { "id": "TECH-CHEM", "name": "כימיה", "faculty": "Chemistry", "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
-
-  { "id": "TECH-CS", "name": "מדעי המחשב", "faculty": "Computer Science", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-  { "id": "TECH-CS-MATH", "name": "מדעי המחשב ומתמטיקה", "faculty": "Computer Science/Mathematics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-  { "id": "TECH-CS-PHY", "name": "מדעי המחשב ופיזיקה", "faculty": "Computer Science/Physics", "rules": [
-    { "type": "subject_requirement", "subject": "Mathematics", "min_units": 5, "min_score": 80 },
-    { "type": "subject_requirement", "subject": "Physics",     "min_units": 5, "min_score": 70 },
-    { "type": "sakem_threshold", "threshold": 91 }
-  ]},
-
-  { "id": "TECH-MATH", "name": "מתמטיקה", "faculty": "Mathematics", "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
-  { "id": "TECH-MATH-CS", "name": "מתמטיקה עם מדעי המחשב", "faculty": "Mathematics/Computer Science", "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
-  { "id": "TECH-APPMATH", "name": "מתמטיקה יישומית", "faculty": "Mathematics", "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
-  { "id": "TECH-MATH-PHY", "name": "מתמטיקה - פיזיקה", "faculty": "Mathematics/Physics", "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
-
-  { "id": "TECH-PHY", "name": "פיזיקה", "faculty": "Physics", "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] }
+  { "id": "TECH-CHEM",       "name": "כימיה",                           "faculty": "הפקולטה לכימיה ע״ש שוליך",                        "rules": [ { "type": "sakem_threshold", "threshold": 83 } ] },
+  { "id": "TECH-CS",         "name": "מדעי המחשב",                      "faculty": "הפקולטה למדעי המחשב ע״ש טאוב",                    "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-CS-MATH",    "name": "מדעי המחשב ומתמטיקה",             "faculty": "הפקולטה למדעי המחשב ע״ש טאוב",                    "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-CS-PHYS",    "name": "מדעי המחשב ופיזיקה",              "faculty": "הפקולטה למדעי המחשב ע״ש טאוב",                    "rules": [ { "type": "sakem_threshold", "threshold": 91 } ] },
+  { "id": "TECH-MATH",       "name": "מתמטיקה",                         "faculty": "הפקולטה למתמטיקה",                                "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
+  { "id": "TECH-MATH-CS",    "name": "מתמטיקה עם מדעי המחשב",           "faculty": "הפקולטה למתמטיקה",                                "rules": [ { "type": "sakem_threshold", "threshold": 87 } ] },
+  { "id": "TECH-AMATH",      "name": "מתמטיקה יישומית",                 "faculty": "הפקולטה למתמטיקה",                                "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
+  { "id": "TECH-MATH-PHYS",  "name": "מתמטיקה - פיזיקה",                "faculty": "הפקולטה למתמטיקה",                                "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] },
+  { "id": "TECH-PHYS",       "name": "פיזיקה",                          "faculty": "הפקולטה לפיזיקה",                                 "rules": [ { "type": "sakem_threshold", "threshold": 85 } ] }
 ]

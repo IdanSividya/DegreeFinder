@@ -1,0 +1,6 @@
+[
+  { "id": "HUJI-CS",  "name": "מדעי המחשב", "faculty": "בית הספר להנדסה ולמדעי המחשב", "rules": [ { "type": "sakem_threshold", "threshold": 25.0 } ] },
+  { "id": "HUJI-EE",  "name": "הנדסת חשמל", "faculty": "בית הספר להנדסה ולמדעי המחשב", "rules": [ { "type": "sakem_threshold", "threshold": 24.0 } ] },
+  { "id": "HUJI-PSY", "name": "פסיכולוגיה", "faculty": "הפקולטה למדעי החברה",          "rules": [ { "type": "sakem_threshold", "threshold": 22.0 } ] },
+  { "id": "HUJI-SOC", "name": "מדעי החברה", "faculty": "הפקולטה למדעי החברה",          "rules": [ { "type": "sakem_threshold", "threshold": 20.0 } ] }
+]

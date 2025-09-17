@@ -7,18 +7,28 @@ class EligibilityEngine:
         self.repo = repo
         self.policy = policy
 
+    def _compute_D_safe(self, applicant: Applicant):
+        # יש מוסדות (כמו BGU) שאין להם compute_D_with_breakdown
+        compute_D = getattr(self.policy, "compute_D_with_breakdown", None)
+        if callable(compute_D):
+            d_val, _notes = compute_D(applicant.bagrut)
+            return float(d_val)
+        return None
+
     def evaluate_applicant(self, applicant: Applicant) -> List[EligibilityResult]:
         results: List[EligibilityResult] = []
         programs = self.repo.list_programs()
-        d_value, _notes = self.policy.compute_D_with_breakdown(applicant.bagrut)
+
+        d_value = self._compute_D_safe(applicant)
         p_value = applicant.psychometric.total
 
         for prog in programs:
-            explanations = []
+            explanations: List[str] = []
             passed_all = True
             s_value = None
             threshold_value = None
 
+            # כל תוכנית מכילה AndRule אחד מחובר מכללי ה־JSON
             for rule in prog.rules:
                 rr = rule.evaluate(applicant)
                 explanations.append(rr.explanation)
@@ -37,10 +47,9 @@ class EligibilityEngine:
                     except Exception:
                         threshold_value = None
 
-            details: Dict[str, float] = {
-                "D": float(d_value),
-                "P": float(p_value)
-            }
+            details: Dict[str, float] = {"P": float(p_value)}
+            if d_value is not None:
+                details["D"] = float(d_value)
             if s_value is not None:
                 details["S"] = s_value
             if threshold_value is not None:

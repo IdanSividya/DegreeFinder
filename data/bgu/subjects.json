@@ -1,0 +1,26 @@
+{
+  "mandatory": [
+    { "name": "hebrew_expression", "display_name": "הבעה עברית", "allowed_units": [2, 3] },
+    { "name": "history",           "display_name": "היסטוריה",   "allowed_units": [2, 5] },
+    { "name": "civics",            "display_name": "אזרחות",     "allowed_units": [2] },
+    { "name": "mathematics",       "display_name": "מתמטיקה",    "allowed_units": [3, 4, 5] },
+    { "name": "english",           "display_name": "אנגלית",     "allowed_units": [3, 4, 5] }
+  ],
+  "electives": [
+    { "name": "literature",        "display_name": "ספרות",                "allowed_units": [2, 5] },
+    { "name": "bible",             "display_name": "תנ״ך",                 "allowed_units": [2, 5] },
+    { "name": "physics",           "display_name": "פיזיקה",               "allowed_units": [5] },
+    { "name": "chemistry",         "display_name": "כימיה",                "allowed_units": [5] },
+    { "name": "biology",           "display_name": "ביולוגיה",             "allowed_units": [5] },
+    { "name": "computer_science",  "display_name": "מדעי המחשב",           "allowed_units": [5] },
+    { "name": "arabic",            "display_name": "ערבית",                "allowed_units": [5] },
+    { "name": "geography",         "display_name": "גיאוגרפיה",            "allowed_units": [5] },
+    { "name": "history_5",         "display_name": "היסטוריה (5 יח״ל)",    "allowed_units": [5] },
+    { "name": "art",               "display_name": "אמנות",                "allowed_units": [5] },
+    { "name": "music",             "display_name": "מוסיקה",               "allowed_units": [5] },
+    { "name": "theater",           "display_name": "תיאטרון",              "allowed_units": [5] },
+    { "name": "agriculture",       "display_name": "חקלאות",               "allowed_units": [5] },
+    { "name": "economics",         "display_name": "כלכלה",                "allowed_units": [5] },
+    { "name": "philosophy",        "display_name": "פילוסופיה",            "allowed_units": [5] }
+  ]
+}

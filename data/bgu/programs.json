@@ -1,0 +1,6 @@
+[
+  { "id": "BGU-CS",  "name": "מדעי המחשב", "faculty": "הפקולטה למדעי ההנדסה",        "rules": [ { "type": "sakem_threshold", "threshold": 760 } ] },
+  { "id": "BGU-EE",  "name": "הנדסת חשמל", "faculty": "הפקולטה למדעי ההנדסה",        "rules": [ { "type": "sakem_threshold", "threshold": 750 } ] },
+  { "id": "BGU-PSY", "name": "פסיכולוגיה", "faculty": "הפקולטה למדעי הרוח והחברה",   "rules": [ { "type": "sakem_threshold", "threshold": 710 } ] },
+  { "id": "BGU-SOC", "name": "מדעי החברה", "faculty": "הפקולטה למדעי הרוח והחברה",   "rules": [ { "type": "sakem_threshold", "threshold": 690 } ] }
+]

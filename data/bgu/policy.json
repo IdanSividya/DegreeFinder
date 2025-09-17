@@ -1,0 +1,10 @@
+{
+  "always_include": [
+    "english",
+    "mathematics",
+    "history",
+    "civics",
+    "hebrew_expression"
+  ],
+  "min_total_units": 20
+}
