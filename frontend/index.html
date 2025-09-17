@@ -2,14 +2,16 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <title>מערכת חישוב סכם – טכניון</title>
+  <title>מערכת חישוב סכם – כמה מוסדות וכמה תארים</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
     .card { border: 1px solid #ddd; padding: 16px; border-radius: 12px; margin-bottom: 16px; }
     .row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-    label { min-width: 160px; }
-    input[type="number"] { width: 100px; }
+    label { min-width: 180px; }
+    input[type="number"], select { padding: 6px 8px; }
+    select.units { width: 120px; }
+    input.score { width: 120px; }
     .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
     .chip { padding: 6px 10px; border: 1px solid #888; border-radius: 12px; cursor: pointer; }
     .chip.selected { background: #f0f0f0; }
@@ -18,34 +20,59 @@
     .results-fail { color: #b30000; font-weight: 700; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .small { font-size: 0.9em; }
+    .errors { border: 1px solid #d33; background: #ffecec; color: #900; padding: 12px; border-radius: 10px; margin-bottom: 16px; display: none; }
+    .errors ul { margin: 0; padding-inline-start: 20px; }
+    .hidden { display: none; }
+    .group-title { margin-top: 8px; margin-bottom: 4px; font-weight: 700; }
+    .section-title { margin-top: 0; }
   </style>
 </head>
 <body>
-  <h1>חישוב סכם – טכניון</h1>
+  <h1>חישוב סכם – מזינים ציונים פעם אחת ובוחרים מוסדות/תארים</h1>
 
+  <div id="errors" class="errors">
+    <b>יש להשלים/לתקן את השגיאות הבאות:</b>
+    <ul id="errors-list"></ul>
+  </div>
+
+  <!-- ציוני פסיכומטרי -->
   <div class="card">
-    <div class="row">
-      <label>מוסד:</label>
-      <select id="institution">
-        <option value="technion">טכניון</option>
-      </select>
-    </div>
+    <h3 class="section-title">פרטים כלליים</h3>
     <div class="row">
       <label>ציון פסיכומטרי:</label>
-      <input type="number" id="psy" min="200" max="800" step="1" value="700">
+      <input type="number" id="psy" min="200" max="800" step="1" placeholder="לדוגמה: 700">
     </div>
   </div>
 
+  <!-- מקצועות -->
   <div class="card">
-    <h3>מקצועות חובה</h3>
-    <div id="mandatory"></div>
+    <h3 class="section-title">מקצועות בגרות</h3>
+    <div id="subjects-block">
+      <h4 class="group-title">מקצועות חובה</h4>
+      <div id="mandatory"></div>
+      <div class="muted small">יש לבחור יח״ל ולמלא ציון לכל מקצוע חובה.</div>
+
+      <h4 class="group-title">מקצועות בחירה</h4>
+      <div id="elective-chips" class="chips"></div>
+      <div id="electives"></div>
+      <div class="muted small">בחר/י מקצועות מהרשימה למעלה; לכל מקצוע שבחרת יש לבחור יח״ל ולמלא ציון.</div>
+    </div>
+    <div class="muted small">* כרגע קטלוג המקצועות מבוסס על הטכניון; ניתן לחשב מול כמה מוסדות יחד.</div>
   </div>
 
+  <!-- בחירת מוסדות מרובה -->
   <div class="card">
-    <h3>מקצועות בחירה</h3>
-    <div id="elective-chips" class="chips"></div>
-    <div id="electives"></div>
-    <div class="muted small">בחר/י מקצועות מהרשימה למעלה והזינו יח"ל + ציון.</div>
+    <h3 class="section-title">בחירת מוסד/ות</h3>
+    <div id="institutions"></div>
+    <div class="muted small">סמן/י מוסד אחד או יותר.</div>
+  </div>
+
+  <!-- בחירת תארים לפי מוסדות נבחרים -->
+  <div class="card">
+    <h3 class="section-title">בחירת תארים לסינון (אופציונלי)</h3>
+    <div id="programs-block" class="muted small">בחר/י מוסד כדי לטעון את התארים שלו.</div>
+    <div id="program-chips"></div>
+    <div class="muted small">אם לא תסומנו תארים – יוצגו כל התארים של המוסדות שנבחרו.</div>
   </div>
 
   <button id="compute">חשב</button>
