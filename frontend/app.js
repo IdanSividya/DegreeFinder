@@ -311,9 +311,9 @@ async function onCompute() {
 }
 
 function renderResults(data) {
-  const root = document.getElementById("results");
-  root.innerHTML = "";
-  if (!Array.isArray(data) || !data.length) { root.textContent = "לא נמצאו תוצאות."; return; }
+  const resultsDiv = document.getElementById("results");
+  clearChildren(resultsDiv);
+  if (!Array.isArray(data) || !data.length) { resultsDiv.textContent = "לא נמצאו תוצאות."; return; }
 
   data.forEach(p => {
     const card = document.createElement("div"); card.className = "card";
@@ -333,9 +333,9 @@ function renderResults(data) {
 
     metrics.className = "grid small";
     metrics.innerHTML = `
-      <div><b>D</b>: ${d}</div>
+      <div><b>ממוצע בגרויות</b>: ${d}</div>
       <div><b>P</b>: ${ptext}</div>
-      <div><b>S</b>: ${s}</div>
+      <div><b>סכם</b>: ${s}</div>
       <div><b>סף</b>: ${t}</div>
     `;
 
@@ -343,7 +343,7 @@ function renderResults(data) {
     (p.explanations || []).forEach(x => { const li = document.createElement("li"); li.textContent = x; expl.appendChild(li); });
 
     card.appendChild(title); card.appendChild(status); card.appendChild(metrics); card.appendChild(expl);
-    root.appendChild(card);
+    resultsDiv.appendChild(card);
   });
 }
 

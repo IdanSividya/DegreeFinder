@@ -1,165 +1,240 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <title>מערכת חישוב סכם – כמה מוסדות וכמה תארים</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      background: #f6f8fa;
-      color: #222;
-    }
-    .header {
-      background: #2a4e7c;
-      color: #fff;
-      padding: 18px 0 14px 0;
-      text-align: center;
-      font-size: 2.1em;
-      font-weight: 700;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px rgba(42,78,124,0.08);
-      margin-bottom: 32px;
-    }
-    .header .icon {
-      font-size: 1.2em;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #e3e7ed;
-      box-shadow: 0 2px 8px rgba(42,78,124,0.07);
-      padding: 20px;
-      border-radius: 14px;
-      margin-bottom: 24px;
-    }
-    .row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    label {
-      min-width: 180px;
-      font-weight: 500;
-      color: #2a4e7c;
-    }
-    input[type="number"], select {
-      padding: 8px 10px;
-      border: 1px solid #bfcbe0;
-      border-radius: 8px;
-      font-size: 1em;
-      background: #f6f8fa;
-      transition: border 0.2s;
-    }
-    input[type="number"]:focus, select:focus {
-      border-color: #2a4e7c;
-      outline: none;
-    }
-    select.units { width: 120px; }
-    input.score { width: 120px; }
-    .chips {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 10px 0;
-    }
-    .chip {
-      padding: 7px 14px;
-      border: 1px solid #bfcbe0;
-      border-radius: 14px;
-      cursor: pointer;
-      background: #f6f8fa;
-      font-size: 1em;
-      transition: background 0.2s, border 0.2s;
-    }
-    .chip.selected {
-      background: #e3e7ed;
-      border-color: #2a4e7c;
-      color: #2a4e7c;
-    }
-    .muted {
-      color: #666;
-      font-size: 0.95em;
-    }
-    .results-pass {
-      color: #0a7a0a;
-      font-weight: 700;
-      font-size: 1.1em;
-    }
-    .results-fail {
-      color: #b30000;
-      font-weight: 700;
-      font-size: 1.1em;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .small { font-size: 0.95em; }
-    .errors {
-      border: 1px solid #d33;
-      background: #ffecec;
-      color: #900;
-      padding: 14px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      display: none;
-      box-shadow: 0 2px 8px rgba(211,51,51,0.07);
-    }
-    .errors ul { margin: 0; padding-inline-start: 20px; }
-    .hidden { display: none; }
-    .group-title {
-      margin-top: 10px;
-      margin-bottom: 6px;
-      font-weight: 700;
-      color: #2a4e7c;
-      font-size: 1.1em;
-    }
-    .section-title {
-      margin-top: 0;
-      color: #2a4e7c;
-      font-size: 1.2em;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    button, input[type="submit"] {
-      background: #2a4e7c;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 24px;
-      font-size: 1.1em;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 12px;
-      box-shadow: 0 2px 8px rgba(42,78,124,0.07);
-      transition: background 0.2s;
-    }
-    button:hover, input[type="submit"]:hover {
-      background: #18345a;
-    }
-    @media (max-width: 700px) {
-      .container { padding: 8px; }
-      .card { padding: 10px; }
-      .row { flex-direction: column; align-items: flex-start; gap: 6px; }
-      label { min-width: 0; }
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>DEGREE FINDER – מערכת חישוב סכם</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Heebo', 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        position: relative;
+        color: #222;
+        /* תמונת רקע של סטודנטים עם כובעי Graduation */
+        background: linear-gradient(135deg, rgba(42,78,124,0.82) 0%, rgba(227,231,237,0.82) 100%), url('https://pic1.yitweb.co.il/cdn-cgi/image/f=auto,w=740,q=75/picserver/mynet/crop_images/2024/06/05/rkkFis6V0/rkkFis6V0_0_0_640_360_0_large.jpg');
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .header {
+        background: #2a4e7c;
+        color: #fff;
+        padding: 22px 0 18px 0;
+        text-align: center;
+        font-size: 2.2em;
+        font-weight: 700;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 12px rgba(42,78,124,0.12);
+        margin-bottom: 36px;
+        border-bottom: 3px solid #18345a;
+      }
+      .header .icon {
+        font-size: 1.3em;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+      .divider {
+        border: none;
+        border-top: 2px solid #e3e7ed;
+        margin: 32px 0 24px 0;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e3e7ed;
+        box-shadow: 0 8px 32px rgba(42,78,124,0.18);
+        padding: 24px;
+        border-radius: 18px;
+        margin-bottom: 28px;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .card:hover {
+        box-shadow: 0 16px 48px rgba(42,78,124,0.28);
+        transform: translateY(-2px) scale(1.01);
+      }
+      .row {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      label {
+        min-width: 180px;
+        font-weight: 500;
+        color: #2a4e7c;
+        font-size: 1.08em;
+      }
+      input[type="number"], select {
+        padding: 10px 12px;
+        border: 1px solid #bfcbe0;
+        border-radius: 10px;
+        font-size: 1.08em;
+        background: #f6f8fa;
+        transition: border 0.2s;
+      }
+      input[type="number"]:focus, select:focus {
+        border-color: #2a4e7c;
+        outline: none;
+      }
+      select.units { width: 120px; }
+      input.score { width: 120px; }
+      .chips {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 12px 0;
+      }
+      .chip {
+        padding: 9px 16px;
+        border: 1px solid #bfcbe0;
+        border-radius: 16px;
+        cursor: pointer;
+        background: #f6f8fa;
+        font-size: 1.08em;
+        transition: background 0.2s, border 0.2s, box-shadow 0.2s;
+        box-shadow: 0 1px 4px rgba(42,78,124,0.04);
+      }
+      .chip.selected {
+        background: #e3e7ed;
+        border-color: #2a4e7c;
+        color: #2a4e7c;
+        box-shadow: 0 2px 8px rgba(42,78,124,0.10);
+      }
+      .muted {
+        color: #666;
+        font-size: 0.98em;
+      }
+      .results-pass, .results-fail {
+        display: inline-block;
+        padding: 6px 18px;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 1.12em;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px rgba(42,78,124,0.07);
+        border: 2px solid #e3e7ed;
+      }
+      .results-pass {
+        background: #e6f7ee;
+        color: #0a7a0a;
+        border-color: #7ad7b0;
+      }
+      .results-fail {
+        background: #ffecec;
+        color: #b30000;
+        border-color: #f5bcbc;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .small { font-size: 0.98em; }
+      .errors {
+        border: 1px solid #d33;
+        background: #ffecec;
+        color: #900;
+        padding: 16px;
+        border-radius: 14px;
+        margin-bottom: 28px;
+        display: none;
+        box-shadow: 0 2px 8px rgba(211,51,51,0.07);
+      }
+      .errors ul { margin: 0; padding-inline-start: 20px; }
+      .hidden { display: none; }
+      .group-title {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: #2a4e7c;
+        font-size: 1.13em;
+        letter-spacing: 0.5px;
+      }
+      .section-title {
+        margin-top: 0;
+        color: #2a4e7c;
+        font-size: 1.25em;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border-bottom: 1.5px solid #e3e7ed;
+        padding-bottom: 6px;
+        margin-bottom: 18px;
+      }
+      button, input[type="submit"] {
+        background: linear-gradient(90deg, #2a4e7c 0%, #3a7bd5 100%);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 32px;
+        font-size: 1.13em;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 16px;
+        box-shadow: 0 2px 8px rgba(42,78,124,0.10);
+        transition: background 0.2s, transform 0.2s;
+      }
+      button:hover, input[type="submit"]:hover {
+        background: linear-gradient(90deg, #18345a 0%, #2a4e7c 100%);
+        transform: scale(1.04);
+      }
+      /* אפקט מעבר עדין לכפתור חשב */
+      #compute {
+        box-shadow: 0 2px 8px rgba(42,78,124,0.10);
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      }
+      #compute:hover {
+        background: linear-gradient(90deg, #18345a 0%, #2a4e7c 100%);
+        transform: scale(1.07);
+        box-shadow: 0 6px 24px rgba(42,78,124,0.18);
+      }
+      footer {
+        background: #2a4e7c;
+        color: #fff;
+        text-align: center;
+        padding: 18px 0 12px 0;
+        font-size: 1em;
+        position: fixed;
+        left: 0; right: 0;
+        bottom: 0;
+        box-shadow: 0 -2px 8px rgba(42,78,124,0.08);
+        margin-top: 40px;
+        z-index: 100;
+      }
+      footer .icon {
+        font-size: 1.1em;
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+      @media (max-width: 700px) {
+        .container { padding: 8px; }
+        .card { padding: 10px; }
+        .row { flex-direction: column; align-items: flex-start; gap: 8px; }
+        label { min-width: 0; }
+        .header { font-size: 1.3em; }
+        button { padding: 10px 16px; font-size: 1em; }
+      }
+    </style>
 </head>
 <body>
   <div class="header">
-    <span class="icon">🎓</span> מערכת חישוב סכם
+    <span class="icon">🎓</span> DEGREE FINDER
   </div>
   <div class="container">
+    <div class="intro" style="background:#f6f8fa;border-radius:12px;padding:18px 24px;margin-bottom:28px;box-shadow:0 2px 8px rgba(42,78,124,0.07);border:1px solid #e3e7ed;">
+      <h2 style="color:#2a4e7c;font-size:1.25em;margin-top:0;margin-bottom:10px;font-weight:700;">ברוכים הבאים ל-DEGREE FINDER</h2>
+      <p style="font-size:1.08em;margin:0;color:#222;line-height:1.7;">
+        אתר זה מאפשר לך לבדוק בקלות ובמהירות את ההתאמה האישית שלך למסלולי לימודים אקדמיים במוסדות מובילים בישראל. הזן/י ציוני בגרות ופסיכומטרי, בחר/י מוסדות ותארים, וקבל/י תוצאות ברורות ומקצועיות – הכל במקום אחד, ללא צורך בהרשמה וללא התחייבות.<br>
+        DEGREE FINDER פותח כדי להנגיש מידע אקדמי בצורה ידידותית, אמינה ומתקדמת, ולסייע לך לקבל החלטות מושכלות לקראת לימודים גבוהים.
+      </p>
+    </div>
     <div id="errors" class="errors">
       <b>יש להשלים/לתקן את השגיאות הבאות:</b>
       <ul id="errors-list"></ul>
@@ -169,7 +244,7 @@
     <div class="card">
       <h3 class="section-title">פרטים כלליים</h3>
       <div class="row">
-        <label>ציון פסיכומטרי:</label>
+        <label><span style="font-size:1.2em;margin-left:6px;vertical-align:middle;">🎯</span>ציון פסיכומטרי:</label>
         <input type="number" id="psy" min="200" max="800" step="1" placeholder="לדוגמה: 700">
       </div>
     </div>
@@ -178,7 +253,7 @@
     <div class="card">
       <h3 class="section-title">מקצועות בגרות</h3>
       <div id="subjects-block">
-        <h4 class="group-title">מקצועות חובה</h4>
+        <h4 class="group-title"><span style="font-size:1.1em;margin-left:6px;vertical-align:middle;">📚</span>מקצועות חובה</h4>
         <div id="mandatory"></div>
         <div class="muted small">יש לבחור יח״ל ולמלא ציון לכל מקצוע חובה.</div>
 
@@ -192,7 +267,7 @@
 
     <!-- בחירת מוסדות מרובה -->
     <div class="card">
-      <h3 class="section-title">בחירת מוסד/ות</h3>
+      <h3 class="section-title"><span style="font-size:1.1em;margin-left:6px;vertical-align:middle;">🏫</span>בחירת מוסד/ות</h3>
       <div id="institutions"></div>
       <div class="muted small">סמן/י מוסד אחד או יותר.</div>
     </div>
@@ -208,8 +283,10 @@
     <button id="compute">חשב</button>
 
     <div id="results" style="margin-top:24px;"></div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
+    <footer style="width:100vw;background:#2a4e7c;color:#fff;text-align:center;padding:16px 0 10px 0;font-size:1em;position:fixed;left:0;right:0;bottom:0;margin:0;border-radius:0;box-shadow:0 -2px 8px rgba(42,78,124,0.08);z-index:100;">
+      <span style="font-size:1.1em;margin-left:6px;vertical-align:middle;">🎓</span>
+      כל הזכויות שמורות &copy; 2025 | DEGREE FINDER
+    </footer>
+    <script src="app.js"></script>
+  </body>
 </html>
