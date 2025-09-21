@@ -5,79 +5,210 @@
   <title>מערכת חישוב סכם – כמה מוסדות וכמה תארים</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
-    .card { border: 1px solid #ddd; padding: 16px; border-radius: 12px; margin-bottom: 16px; }
-    .row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-    label { min-width: 180px; }
-    input[type="number"], select { padding: 6px 8px; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: #f6f8fa;
+      color: #222;
+    }
+    .header {
+      background: #2a4e7c;
+      color: #fff;
+      padding: 18px 0 14px 0;
+      text-align: center;
+      font-size: 2.1em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(42,78,124,0.08);
+      margin-bottom: 32px;
+    }
+    .header .icon {
+      font-size: 1.2em;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e3e7ed;
+      box-shadow: 0 2px 8px rgba(42,78,124,0.07);
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    label {
+      min-width: 180px;
+      font-weight: 500;
+      color: #2a4e7c;
+    }
+    input[type="number"], select {
+      padding: 8px 10px;
+      border: 1px solid #bfcbe0;
+      border-radius: 8px;
+      font-size: 1em;
+      background: #f6f8fa;
+      transition: border 0.2s;
+    }
+    input[type="number"]:focus, select:focus {
+      border-color: #2a4e7c;
+      outline: none;
+    }
     select.units { width: 120px; }
     input.score { width: 120px; }
-    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-    .chip { padding: 6px 10px; border: 1px solid #888; border-radius: 12px; cursor: pointer; }
-    .chip.selected { background: #f0f0f0; }
-    .muted { color: #666; font-size: 0.9em; }
-    .results-pass { color: #0a7a0a; font-weight: 700; }
-    .results-fail { color: #b30000; font-weight: 700; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .small { font-size: 0.9em; }
-    .errors { border: 1px solid #d33; background: #ffecec; color: #900; padding: 12px; border-radius: 10px; margin-bottom: 16px; display: none; }
+    .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .chip {
+      padding: 7px 14px;
+      border: 1px solid #bfcbe0;
+      border-radius: 14px;
+      cursor: pointer;
+      background: #f6f8fa;
+      font-size: 1em;
+      transition: background 0.2s, border 0.2s;
+    }
+    .chip.selected {
+      background: #e3e7ed;
+      border-color: #2a4e7c;
+      color: #2a4e7c;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.95em;
+    }
+    .results-pass {
+      color: #0a7a0a;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    .results-fail {
+      color: #b30000;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .small { font-size: 0.95em; }
+    .errors {
+      border: 1px solid #d33;
+      background: #ffecec;
+      color: #900;
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      display: none;
+      box-shadow: 0 2px 8px rgba(211,51,51,0.07);
+    }
     .errors ul { margin: 0; padding-inline-start: 20px; }
     .hidden { display: none; }
-    .group-title { margin-top: 8px; margin-bottom: 4px; font-weight: 700; }
-    .section-title { margin-top: 0; }
+    .group-title {
+      margin-top: 10px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #2a4e7c;
+      font-size: 1.1em;
+    }
+    .section-title {
+      margin-top: 0;
+      color: #2a4e7c;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    button, input[type="submit"] {
+      background: #2a4e7c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+      box-shadow: 0 2px 8px rgba(42,78,124,0.07);
+      transition: background 0.2s;
+    }
+    button:hover, input[type="submit"]:hover {
+      background: #18345a;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 8px; }
+      .card { padding: 10px; }
+      .row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      label { min-width: 0; }
+    }
   </style>
 </head>
 <body>
-  <h1>חישוב סכם – מזינים ציונים פעם אחת ובוחרים מוסדות/תארים</h1>
-
-  <div id="errors" class="errors">
-    <b>יש להשלים/לתקן את השגיאות הבאות:</b>
-    <ul id="errors-list"></ul>
+  <div class="header">
+    <span class="icon">🎓</span> מערכת חישוב סכם
   </div>
-
-  <!-- ציוני פסיכומטרי -->
-  <div class="card">
-    <h3 class="section-title">פרטים כלליים</h3>
-    <div class="row">
-      <label>ציון פסיכומטרי:</label>
-      <input type="number" id="psy" min="200" max="800" step="1" placeholder="לדוגמה: 700">
+  <div class="container">
+    <div id="errors" class="errors">
+      <b>יש להשלים/לתקן את השגיאות הבאות:</b>
+      <ul id="errors-list"></ul>
     </div>
-  </div>
 
-  <!-- מקצועות -->
-  <div class="card">
-    <h3 class="section-title">מקצועות בגרות</h3>
-    <div id="subjects-block">
-      <h4 class="group-title">מקצועות חובה</h4>
-      <div id="mandatory"></div>
-      <div class="muted small">יש לבחור יח״ל ולמלא ציון לכל מקצוע חובה.</div>
-
-      <h4 class="group-title">מקצועות בחירה</h4>
-      <div id="elective-chips" class="chips"></div>
-      <div id="electives"></div>
-      <div class="muted small">בחר/י מקצועות מהרשימה למעלה; לכל מקצוע שבחרת יש לבחור יח״ל ולמלא ציון.</div>
+    <!-- ציוני פסיכומטרי -->
+    <div class="card">
+      <h3 class="section-title">פרטים כלליים</h3>
+      <div class="row">
+        <label>ציון פסיכומטרי:</label>
+        <input type="number" id="psy" min="200" max="800" step="1" placeholder="לדוגמה: 700">
+      </div>
     </div>
-    <div class="muted small">* כרגע קטלוג המקצועות מבוסס על הטכניון; ניתן לחשב מול כמה מוסדות יחד.</div>
+
+    <!-- מקצועות -->
+    <div class="card">
+      <h3 class="section-title">מקצועות בגרות</h3>
+      <div id="subjects-block">
+        <h4 class="group-title">מקצועות חובה</h4>
+        <div id="mandatory"></div>
+        <div class="muted small">יש לבחור יח״ל ולמלא ציון לכל מקצוע חובה.</div>
+
+        <h4 class="group-title">מקצועות בחירה</h4>
+        <div id="elective-chips" class="chips"></div>
+        <div id="electives"></div>
+        <div class="muted small">בחר/י מקצועות מהרשימה למעלה; לכל מקצוע שבחרת יש לבחור יח״ל ולמלא ציון.</div>
+      </div>
+      <div class="muted small">* כרגע קטלוג המקצועות מבוסס על הטכניון; ניתן לחשב מול כמה מוסדות יחד.</div>
+    </div>
+
+    <!-- בחירת מוסדות מרובה -->
+    <div class="card">
+      <h3 class="section-title">בחירת מוסד/ות</h3>
+      <div id="institutions"></div>
+      <div class="muted small">סמן/י מוסד אחד או יותר.</div>
+    </div>
+
+    <!-- בחירת תארים לפי מוסדות נבחרים -->
+    <div class="card">
+      <h3 class="section-title">בחירת תארים לסינון (אופציונלי)</h3>
+      <div id="programs-block" class="muted small">בחר/י מוסד כדי לטעון את התארים שלו.</div>
+      <div id="program-chips"></div>
+      <div class="muted small">אם לא תסומנו תארים – יוצגו כל התארים של המוסדות שנבחרו.</div>
+    </div>
+
+    <button id="compute">חשב</button>
+
+    <div id="results" style="margin-top:24px;"></div>
   </div>
-
-  <!-- בחירת מוסדות מרובה -->
-  <div class="card">
-    <h3 class="section-title">בחירת מוסד/ות</h3>
-    <div id="institutions"></div>
-    <div class="muted small">סמן/י מוסד אחד או יותר.</div>
-  </div>
-
-  <!-- בחירת תארים לפי מוסדות נבחרים -->
-  <div class="card">
-    <h3 class="section-title">בחירת תארים לסינון (אופציונלי)</h3>
-    <div id="programs-block" class="muted small">בחר/י מוסד כדי לטעון את התארים שלו.</div>
-    <div id="program-chips"></div>
-    <div class="muted small">אם לא תסומנו תארים – יוצגו כל התארים של המוסדות שנבחרו.</div>
-  </div>
-
-  <button id="compute">חשב</button>
-
-  <div id="results" style="margin-top:24px;"></div>
 
   <script src="app.js"></script>
 </body>
