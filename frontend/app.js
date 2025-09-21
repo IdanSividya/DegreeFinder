@@ -17,8 +17,10 @@ function showErrors(list) {
 }
 function hideErrors(){ showErrors([]); }
 function hebrewInstitutionName(inst) {
-  if (inst === "technion") return "הטכניון";
-  if (inst === "huji") return "האוניברסיטה העברית";
+  const key = (inst || "").toLowerCase();
+  if (key === "technion") return "הטכניון";
+  if (key === "huji") return "האוניברסיטה העברית";
+  if (key === "bgu") return "בן גוריון";
   return inst;
 }
 function safeNumberToFixed(value, digits) {
